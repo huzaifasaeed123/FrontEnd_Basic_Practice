@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Result</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div id="topmenu">
+        <img id="logo" src="logo.png" alt="">
+        <nav class="menunav" id="myTopnav">
+            <a href="https://saeedmdcatlms.com/">Home</a>
+            <a href="">WhatsApp Groups</a>
+            <a href="https://saeedmdcatlms.com/courses-2/">Our Courses</a>
+            <a href="https://saeedmdcatlms.com/">LMS</a>
+            <a href="https://saeedmdcat.com/">MDCAT DATA</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </nav>
+    </div>
+    <div id="main_heading">
+        <h1>Tentative Merit List For Punjab 2023</h1>
+        <h4>Search Your Rank </h4>
+
+    </div>
+
+    <div id="searchdiv">
+        <form id="searchform">
+            <label for="username">Student Name</label> <br>
+            <input width="200px" placeholder="Enter Your Name(PMDC Registration Name:)" type="text" id="username"> <br>
+            <label for="cnic">Enter Your CNIC</label> <br>
+            <input type="number" id="cnic"> <br>
+            <button type="button" onclick="searchdata()">Search</button>
+        </form>
+    </div>
+
+    <div style="display: none;" id="error">
+        <h1 id="heading_error"></h1>
+        <p id="para_error"></p>
+
+    </div>
+    
+
+    <div id="tablediv" style="display: none;" >
+        <table id="table" style="display: none;">
+            <tr>
+                <th colspan="2">Student Wise Detail</th>
+            </tr>
+            <tr>
+                <th>Student Name:</th>
+                <td class="detail" id="studentname"></td>
+            </tr>
+            <tr>
+                <th>Father Name:</th>
+                <td class="detail" id="fathername">fathername</td>
+            </tr>
+            <tr>
+                <th>MDCAT MARKS</th>
+                <td class="detail" id="mdcatmarks"></td>
+            </tr>
+            <tr>
+                <th>University</th>
+                <td class="detail" id="university"></td>
+            </tr>
+            <tr>
+                <th>FSC MARKS</th>
+                <td class="detail" id="fscmarks"></td>
+            </tr>
+            <tr>
+                <th>Rank(50,40,10)</th>
+                <td class="detail" id="rank1"></td>
+            </tr>
+            <tr>
+                <th>Rank(50/50)</th>
+                <td class="detail" id="rank2"></td>
+            </tr>
+            <tr>
+                <th colspan="2">Courtesy: SAEED MDCAT</th>
+            </tr>
+        </table>
+    </div>
+
+
+
+    <p id="test"></p>
+
+    <script>
+
+        function toggleNav() {
+            console.log("Huzaisiajsajisaj")
+            var x = document.getElementById("myTopnav");
+            if (x.className === "menunav") {
+                x.className += " responsive";
+            } else {
+                x.className = "menunav";
+            }
+        }
+
+        function searchdata() {
+            console.log("Fuction called");
+
+
+            const name = document.getElementById("username").value;
+            const cnic = document.getElementById("cnic").value;
+            const basename = btoa(name);
+            const basecnic = btoa(cnic);
+            var apiUrl = "https://result.saeedmdcatlms.com/student/" + basename + "=/" + basecnic;
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                        
+                    }
+                    return response.json(); // Parse the response body as JSON
+                })
+                .then(data => {
+                    // Handle the API response data here
+                    console.log(data);
+                    try {
+                        document.getElementById("studentname").innerHTML = data[0]["Student Name"];
+                        document.getElementById("fathername").innerHTML = data[0]["Father Name"];
+                        document.getElementById("mdcatmarks").innerHTML = data[0]["MDCAT MARKS"];
+                        document.getElementById("university").innerHTML = data[0]["University"];
+                        document.getElementById("fscmarks").innerHTML = data[0]["FSC MARKS"];
+                        document.getElementById("rank1").innerHTML = data[0]["Rank(50,40,10)"];
+                        document.getElementById("rank2").innerHTML = data[0]["Rank(50/50)"];
+                        document.getElementById("table").style.display = "block";
+                        document.getElementById("tablediv").style.display = "block";
+                        document.getElementById("error").style.display = "none";
+                        console.log(data[0]["Student Name"]);
+                    }
+                    catch{
+                        document.getElementById("error").style.display = "block";
+                    document.getElementById("heading_error").innerHTML = "No Record Found";
+                    document.getElementById("para_error").innerHTML = "Enter Correct Name Or CNIC(Without Dashes) that given on Your MDCAT ADMIT CARD";
+
+                    }
+                   
+
+                })
+                .catch(error => {
+                    // Handle any errors that occurred during the fetch
+                    
+                    document.getElementById("error").style.display = "block";
+                        document.getElementById("heading_error").innerHTML = "Too Many Request Or NetWork Error";
+                        document.getElementById("para_error").innerHTML = "You have Requested too many Time.We are allow just 2 Request Per 2 Minute.Try Again After 2 Minute Or Check Your Internet";
+
+                    console.error("Fetch error:", error);
+                });
+
+        }
+
+    </script>
+
+</body>
+
+</html>

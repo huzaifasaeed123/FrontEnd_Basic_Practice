@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form</title>
+</head>
+<body>
+    <h1>HTML FORM</h1>
+    <form action="mailto:saeedhuzaifa111@gmail.com" method="post" enctype="text/plain">
+        <!-- here name is used to send data to server and value is used for initial value when the web page is reload -->
+        <!--Placeholder is for hint in Input Type-->
+        <!--To Maintain connection between label and input ,We can write Input tag within label Elements For Example Name-->
+        <!--for in label must be same with id in input to maintain connection between label and input(If we are not using input within label)-->
+        <label for="fname">First Name:
+            <input type="text" id="fname" name="YourName" placeholder="Please Enter Your Nsme"><br> <br>
+            
+        </label>
+        
+        <label for="email">Your Email: </label>
+        <input type="email" name="YourEmail" id=""><br>
+        <label for="date">Date Of Birth: </label>
+        <input type="date" name="DateOFBirth"><br>
+        <label for="">Your Message:: </label> <br>
+        <textarea name="" id="" cols="20" rows="10"></textarea><br>
+        <!--If we create any button in form then onClick it will redirect to submit data and perform relted action(Work as Submit by default)
+        This Can also be done by using input as submit button-->
+        <!-- <input type="submit"><br> -->
+        <button type="submit">Submit</button>
+        <!--If you want to create simple button and for other purpose rather tahn submit than change type to button-->
+        <button type="button">SImple Button</button>
+        <!--Button To clear all data that enter in Form is reset type button-->
+        <button type="reset">Reset</button>
+         <hr>
+        <h3>Use For list</h3> <br>
+        <select name="" id="">
+            <option value="huzaifa">Huzaifa</option>
+            <option value="saeed">Saeed</option>
+            <option value="ali">Ali</option>
+        </select>
+    </form>
+    <hr>
+    <!--This form is to send get request by url to search its content on google,actually we are leaning name attribute which combine our valaue-->
+    <!--Information is always pass in name=value pair form,in input text form,text will be a valaue,
+        in radio and checkbox we have to define valaue separarte for each-->
+        <h4>Practice Question 1</h4>
+    <form action="https://www.google.com/search">
+        <label for="search">
+            <input type="text" id="search" name="q">
+        </label>
+        <button type="submit">Submit</button>
+    </form>
+    <h4>Practice Questoin 2</h4>
+    <form action="server/">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="MyName"><br> <br>
+        <div>
+            Sex:
+            <label for="male1">Male</label>
+            <input type="radio" id="male1" name="sex" value="male">
+            <label for="female1">Female</label>
+            <input type="radio" id="female1" name="sex" value="female">
+        </div> <br>
+        <label for="se">Country::</label>
+        <select name="country" id="se">
+            
+            <option value="india">India</option>
+            <option value="Nepal">Nepal</option>
+            <option value="USA">USA</option>
+            <option value="canada">Canada</option>
+        </select><br>
+        <label for="txtarea1">Your Message</label><br>
+        <textarea name="message" id="txtarea1" cols="50" rows="10"></textarea>
+        <br>
+        <input type="checkbox" name="marked" id="chkbox" value="onnha">
+        <input type="checkbox" name="marked" id="chkbox" value="onnha">
+        <label for="chkbox">Subscribe</label> <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

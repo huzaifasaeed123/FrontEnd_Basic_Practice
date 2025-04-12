@@ -1,0 +1,39 @@
+
+body{
+    margin: 0;
+
+}
+hr{
+    
+    border-style: dotted;
+    width: 30%;
+    height: 0px;
+    border-width: 5px;
+    border-bottom: 0px;
+}
+h1{
+    color: #ffa511;
+    font-family: League spartan;
+    text-align: center;
+    font-size: 55px;
+    font-weight: 900px;
+    letter-spacing: 2px;
+    line-height: 1.5px;
+    
+    text-decoration: teal double;
+}
+h3 {
+    color: blue;
+    font: 100;
+}
+img{
+    border-radius: 100%;
+}
+button{
+    color:white;
+    background-color: blue;
+}
+p{
+    color: white;
+    background-color: black;
+}

@@ -1,0 +1,28 @@
+.card img{
+    width: 100%;
+    height: 250px;
+    border-radius: 10%;
+}
+.card{
+    width: 404px;
+    height: 510px;
+    border: 2px solid black;
+    border-radius: 5%;
+    padding: 5px;
+   
+
+}
+#pet{
+    
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media (max-width:870px)
+{
+    #pet{
+        height: 1200px;
+        flex-wrap: wrap;
+        /* flex-direction: column; */
+    }
+}

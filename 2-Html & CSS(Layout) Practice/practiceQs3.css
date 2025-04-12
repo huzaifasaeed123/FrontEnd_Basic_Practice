@@ -1,0 +1,145 @@
+
+#outerdiv{
+    height: 200px;
+    width: 70px;
+    border: 2px solid black;
+}
+#outerdiv div{
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    margin: 10px;
+    border-radius: 100%;
+}
+#red{
+    background-color: red;
+    border-color: black;
+}
+#green{
+    background-color: green;
+    border-color: black;
+}
+#yellow{
+    background-color: yellow;
+    border-color: black;
+}
+/* % sign always change with respect to parent while px change with fix size */
+#outer{
+    background-color: red;
+    width: 500px;
+    height: 500px;
+    font-size: 40px;
+}
+#inner{
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    margin-left: 1em;
+    font-size: 1em;
+}
+/* Question No 1 */
+#box{
+    height: 300px;
+    width: 300px;
+    background-color: grey;
+    /* margin-top: 20px;
+    margin-right: 1em;
+    margin-bottom: 40px;
+    margin-left: 2em; */
+    font-size: 20px;
+    margin: 20px 1em 40px 2em ;
+    padding: 1em;
+    /* transition: border-radius 1s ease-in-out 1s; */
+    transition-duration: 6s;
+    /* transition-delay: 2s; */
+    transition-property: initial;
+    transition-timing-function: ease-in;
+
+    /* transition: margin-left 2s ease-in 2s; */
+
+}
+
+#box:hover{
+    background-color: black;
+    margin-left: 400px;
+    border-radius: 100%;
+    transform: rotate(45deg);
+    transform: rotate(360);
+
+    /* transition: border-radius 2s ease-in-out 2s; */
+}
+/* Question No 2 */
+.Question2{
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+    border: 2px solid black;
+    border-radius: 100%;
+    /* To keep the CSS  properties of block Elemnt and behave as inline Elemnts  */
+    display: inline-block;
+}
+/* Question No 3 Practice To Create TWO Block Card Showing Shadow*/
+li{
+    display: inline-block;
+    list-style-type: disc;
+    margin-right: 10px;
+}
+div img{
+    width: 100%;
+    height: 250px;
+    border-radius: 10%;
+    color: red;
+}
+
+.card{
+    width: 200px;
+    height: 350px;
+    display: inline-block;
+    /* margin: 20px 20px 5px 20px;
+    padding: 10px 10px; */
+    margin: 10px;
+    border: 2px solid black;
+    transition-duration: 1s;
+    border-radius: 10px;
+}
+.card:hover{
+    box-shadow: 5px 5px 10px black;
+}
+/* Practice Question 4 In Video : To make Smiley Face by using specially position property */
+#smileface{
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background-color: rgb(200, 144, 41);
+}
+#eye1{
+    position: relative;
+    top: 80px;
+    left: 90px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: black;
+    display: inline-block;
+}
+#eye2{
+    position: relative;
+    left: 150px;
+    top: 80px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: black;
+    display: inline-block;
+}
+#mouth{
+    width: 100px;
+    height: 50px;
+    position: relative;
+    top:165px ;
+    left: 100px;
+    background-color: rgb(226, 52, 52);
+    /* border-bottom-left-radius: 60%;
+    border-bottom-right-radius: 60%; */
+    border-radius: 0 0 50% 50%;
+}

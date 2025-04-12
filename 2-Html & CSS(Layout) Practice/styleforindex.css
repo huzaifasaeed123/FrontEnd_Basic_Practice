@@ -1,0 +1,28 @@
+/* Universal Selector*/
+*{
+    font-family: arial;
+}
+/* Elementor Selector*/
+h1,h3{
+    color: #b92b27;
+}
+/* ID Selector*/
+#login{
+    color: green;
+    background-color: white;
+}
+#signup{
+    color: #0dd836;
+}
+/* Class Selector*/
+.upvote{
+    background-color: blanchedalmond;
+}
+/* Decendant Selector( its also use as decendant of elementor,class And ID)*/
+nav li a{
+    color: #b92b27;
+}
+/* Under Class Hirecrchy ,u van use elementor or id selector but follow downward hirecrchy not 100% hirecrchy*/
+.post h1 span{
+    background-color: rgb(17, 225, 218);
+}

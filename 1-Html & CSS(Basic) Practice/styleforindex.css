@@ -1,0 +1,106 @@
+/* Universal Selector*/
+*{
+    font-family: arial;
+}
+/* Elementor Selector*/
+h1,h3{
+    color: #b92b27;
+}
+/* ID Selector*/
+#login{
+    color: green;
+    background-color: white;
+}
+#signup{
+    color: #0dd836;
+}
+/* Class Selector*/
+.upvote{
+    background-color: blanchedalmond;
+}
+/* Decendant Selector( its also use as decendant of elementor,class And ID)*/
+nav ul li a{
+    color: #b92b27;
+}
+/* Under Class Hirecrchy ,u van use elementor or id selector but follow downward hirecrchy not 100% hirecrchy*/
+.post h1 span{
+    background-color: rgb(17, 225, 218);
+}
+/* Sibling Combinator Selector */
+/* Immediately after each other at same level */
+p + h3{
+    text-decoration: underline;
+}
+/* U can also Use Class Selector+ other selector as elementor selector and id selector and decendant selector */
+.upvote + button{
+    background-color: aqua;
+}
+/* Child Combinator:Use only in direct child parent relation so its disadvantage and also use only one hirecrhy
+so we use mostly Decendant Selector */
+span>button{
+    font-size: large;
+}
+/* Attribute Selector */
+/* As on name,its select on Attribute name(Type) and their Value */
+input[type="text"]{
+    color: #b92b27;
+}
+input[type="password"]{
+    color: blue;
+}
+/* Another Example */
+a[href="/home"]{
+    text-decoration: line-through;
+}
+/* we can also this by using only attribute name */
+a[href]{
+    background-color: #ffffff;
+}
+/* Practice Question For CSS part 2 */
+div p[id="myid"]{
+    color: green;
+    /* border: 5px dotted blue; */
+    /* It can also Be Written IN divide Form */
+    /* Border Width can be top,bottom,left,right and we can use all in single lie */
+    border-width: 5px 10px 3px 2px;   
+    border-style: dotted;
+    border-color: Blue;
+}
+/* if div has id insted of p */
+div[id="myid"] p{
+    color: green;
+}
+#myid p{
+    color:green;
+}
+/* Another Implementation */
+#myid{
+    color: green;
+}
+/* Hover Pesdu Class */
+/* login button will not reflect because id have more pririty that we give upper as a background*/
+h1 button:hover{
+    background-color: red;
+    font-size: large;
+    font-weight: bold;
+}
+/* Active Pesdu Class */
+.upvote:active{
+    background-color: black;
+    color: white;
+    text-decoration: underline;
+
+}
+/* Checked psedu Class */
+ input[type="radio"]:checked + label{
+    color: red;
+    font-weight: bold;
+    font-size: large;
+}
+/* nth of type pesdu class */
+.post :nth-of-type(2){
+    background-color: #b92b27;
+}
+#myid::selection{
+    background-color: yellow;
+}

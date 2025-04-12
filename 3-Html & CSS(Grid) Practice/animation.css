@@ -1,0 +1,48 @@
+div{
+    background-color: yellow;
+    width: 300px;
+    height: 300px;  
+    animation:Percentage-animation 4s ease-in-out 0s 1 alternate;
+}
+h2{
+    /* animation-name: first-animation;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 3;
+    animation-direction: alternate; */
+
+    /* animation shortland */
+    animation:first-animation 4s ease-in-out 0s 1 alternate;
+}
+@keyframes first-animation{
+    from{
+        width: 10px;
+        font-size: 4px;
+        background-color: blue;
+    }
+    to{
+        width: 300px;
+        font-size: 40px;
+        background-color: brown;
+    }
+}
+/* Animation in Multiple Stages(Use %{(From) use for 0% and (To) use for 100%}) */
+@keyframes Percentage-animation{
+    0%{
+        background-color:blue;
+    }
+    25%{
+        background-color: brown;
+    }
+    50%{
+        background-color: black;
+    }
+    75%{
+        background-color: blanchedalmond;
+    }
+    100%{
+        background-color: aqua;
+    }
+
+}
