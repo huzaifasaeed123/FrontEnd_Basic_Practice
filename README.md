@@ -51,6 +51,7 @@ This repository contains my journey in web development, structured into 11 detai
 ## 11. Simon Game (JS)
 - **Description**: Developed an interactive Simon game using HTML, CSS, and JavaScript.
 - **Outcome**: Demonstrated capability in frontend development and interactive UI design, showcasing skills in DOM manipulation and JavaScript logic implementation.
+  
 ![image](https://github.com/user-attachments/assets/0eba5ee5-a20f-4f7a-af7b-25ca7b44cc34)
 
 ---
